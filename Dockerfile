@@ -10,7 +10,7 @@ RUN dotnet restore
 COPY . .
 RUN dotnet publish -r linux-musl-arm64 -c Release -o out
 
-FROM mcr.microsoft.com/dotnet/core/runtime-deps:3.1-alpine AS runtime
+FROM mcr.microsoft.com/dotnet/runtime:3.1-alpine-arm64v8 AS runtime
 WORKDIR /app
 COPY --from=build /app/out .
 
