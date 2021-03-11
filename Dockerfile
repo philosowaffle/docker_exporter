@@ -8,7 +8,7 @@ RUN dotnet restore
 
 # Now the code.
 COPY . .
-RUN dotnet publish -r linux-musl-x64 -c Release -o out
+RUN dotnet publish -r linux-musl-arm64 -c Release -o out
 
 FROM mcr.microsoft.com/dotnet/core/runtime-deps:3.1-alpine AS runtime
 WORKDIR /app
