@@ -39,7 +39,7 @@ jobs:
           push: true
           file: ./Dockerfile
           build-args: CACHEBUST=${{ github.run_id }}
-          tags: philosowaffle/docker_exporter:armLatest
+          tags: philosowaffle/docker_exporter_arm:latest
           platforms: linux/arm64
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new
